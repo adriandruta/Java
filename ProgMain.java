@@ -7,7 +7,9 @@ public class ProgMain {
 
 	public static void main(String[] args) throws CloneNotSupportedException {
 		List<Autobuz> a = new ArrayList<Autobuz>();
-
+		Autobuz[] ar = new Autobuz[10];
+		
+		
 		Autobuz a1 = new Autobuz(1982, "Aliosa", 10, 2, new int[] { 1, 2 });
 		Autobuz a2 = new Autobuz(1984, "Alioel", 10, 3, new int[] { 1, 2, 3 });
 		Autobuz a6 = new Autobuz(1993, "mama", 10, 3, new int[] { 1, 2, 3 });
@@ -17,11 +19,17 @@ public class ProgMain {
 		a.add(a2);
 		a.add(a6);
 		a.add(a7);
-
+		
+		ar[0] = a1;
+		
+		
 		List<Autobuz> sortat = new ArrayList<>();
-
-		sortat = a.stream().filter(autobuz -> autobuz.an >= 1990).collect(Collectors.toList());
-
+		List<Autobuz> sortat2 = new ArrayList<>();
+		
+		sortat = a.stream().filter(autobuz -> autobuz.an >= 1990)
+				.collect(Collectors.toList());
+		
+				
 		Autobuz a3 = a2.myClone();
 		Autobuz a4 = (Autobuz) a2.clone();
 		System.out.println(a4.toString());
@@ -31,8 +39,10 @@ public class ProgMain {
 			System.out.println(autobuz.toString());
 		}*/
 
-		for (Autobuz autobuz : sortat) {
-			System.out.println(autobuz.toString());
-		}
+		//for (Autobuz autobuz : sortat) {
+		//	System.out.println(autobuz.toString());
+		//}
+		
+		System.out.println(sortat2.toString());
 	}
 }
